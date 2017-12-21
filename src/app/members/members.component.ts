@@ -49,6 +49,10 @@ export class MembersComponent implements OnInit {
   }
 
 
+  process() {
+    this.router.navigateByUrl('/process');
+  }
+
   ngOnInit() {
   }
 

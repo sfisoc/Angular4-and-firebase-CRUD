@@ -58,6 +58,14 @@ export class QueueComponent implements OnInit {
   ngOnInit() {
   }
 
+  queue() {
+    this.router.navigateByUrl('/order');
+  }
+
+  home() {
+    this.router.navigateByUrl('/');
+  }
+
   log(item) {
     console.log('Log Start');
     console.log(item);

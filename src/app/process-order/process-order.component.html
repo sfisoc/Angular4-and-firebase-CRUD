@@ -1,40 +1,40 @@
 <div class="form-container" id="toolbar">
-  <header [@fallIn]="state">
-    <button (click)="queue()" class="basic-btn">Queue</button>
-  </header>
-  <div id="page">
-    <h2>{{title}} </h2>
+    <header [@fallIn]="state">
+        <button (click)="queue()" class="basic-btn">Queue</button>
+    </header>
+    <div id="page">
+        <h2>{{title}} </h2>
 
-    <table class="table-scroll">
-      <tr>
-        <th>Order Owner</th>
-        <th>Ordered Items</th>
-        <th>Order State</th>
-        <th>Change State</th>
-        <th>Action</th>
-      </tr>
-      <tr *ngFor="let item of orders | async ">
-        <td>{{item.owner}}</td>
-        <td>
-          <ul>
-             
-             <li *ngFor="let food of item.list">
-              <p>{{food.name}} ... R {{food.price}}</p>
-             </li>
-          </ul>
-        </td>
-        <td>{{item.state}}</td>
-        <td><select [(ngModel)]="currentstate">
+        <table class="table-scroll">
+            <tr>
+                <th>Order Owner</th>
+                <th>Ordered Items</th>
+                <th>Order State</th>
+                <th>Change State</th>
+                <th>Action</th>
+            </tr>
+            <tr *ngFor="let item of orders | async ">
+                <td>{{item.owner}}</td>
+                <td>
+                    <ul>
+
+                        <li *ngFor="let food of item.list">
+                            <p>{{food.name}} ... R {{food.price}}</p>
+                        </li>
+                    </ul>
+                </td>
+                <td>{{item.state}}</td>
+                <td><select [(ngModel)]="currentstate">
           <option *ngFor="let game of states" [ngValue]="game"> {{game.name}} </option>
         </select></td>
-        <td >
-          <button  (click)="processOrder(item,currentstate)" class="button">Submit</button>
-        </td>
-        
-      </tr>
-    </table>
+                <td>
+                    <button (click)="processOrder(item,currentstate)" class="button">Submit</button>
+                </td>
+
+            </tr>
+        </table>
 
 
-  </div>
-
+    </div>
+    <button (click)="home()" class="basic-btn">Home</button>
 </div>

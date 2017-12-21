@@ -1,13 +1,13 @@
 <div class="form-container">
-  
-  <h2>Reset Password</h2>
 
-  <span class="error" *ngIf="error" [@fallIn]='state'>{{ error }}</span>
+    <h2>Reset Password</h2>
 
-  <form #formData='ngForm' (ngSubmit)="onSubmit(formData)">
+    <span class="error" *ngIf="error" [@fallIn]='state'>{{ error }}</span>
 
-    <input type="text" placeholder="Email address.." (ngModel)="email" name="email" class="txt" required>
-    
-    <button type="submit" [disabled]="!formData.valid" class="basic-btn">Send Reset Email</button>
-  </form>
+    <form #formData='ngForm' (ngSubmit)="onSubmit(formData)">
+
+        <input type="text" placeholder="Email address.." name="email" class="txt" required>
+
+        <button type="submit" [disabled]="!formData.valid" class="basic-btn">Send Reset Email</button>
+    </form>
 </div>

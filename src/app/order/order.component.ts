@@ -83,6 +83,10 @@ export class OrderComponent implements OnInit {
     this.router.navigateByUrl('/queue');
   }
 
+  home() {
+    this.router.navigateByUrl('/');
+  }
+
   cart(item: any) {
 
     console.log(item);

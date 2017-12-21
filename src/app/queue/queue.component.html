@@ -1,41 +1,41 @@
 <div class="form-container" id="toolbar">
-  <header [@fallIn]="state">
-    <button (click)="queue()" class="basic-btn">Queue</button>
-  </header>
-  <div id="page">
-    <h2>{{title}} </h2>
+    <header [@fallIn]="state">
+        <button (click)="queue()" class="basic-btn">Order</button>
+    </header>
+    <div id="page">
+        <h2>{{title}} </h2>
 
-    <fieldset class="table">
-      <legend>
-        <h3>
-          <strong>My Order</strong>
-        </h3>
-      </legend>
-    
-      <table class="table">
-        <tr>
-          <th>Order Owner</th>
-          <th>Order State</th>
-        </tr>
-        <tr  *ngFor="let item of ownersOrder | async ">
-          <td>{{item.owner}}</td>
-          <td>{{item.state}}</td>
-        </tr>
-      </table>
-    </fieldset>
+        <fieldset class="table">
+            <legend>
+                <h3>
+                    <strong>My Order</strong>
+                </h3>
+            </legend>
 
-    <table class="table">
-      <tr>
-        <th>Order Owner</th>
-        <th>Order State</th>
-      </tr>
-      <tr *ngFor="let item of orders | async" >
-        <td>{{item.owner}}{{log(item)}}</td>
-        <td>{{item.state}}</td>
-      </tr>
-    </table>
-   
+            <table class="table">
+                <tr>
+                    <th>Order Owner</th>
+                    <th>Order State</th>
+                </tr>
+                <tr *ngFor="let item of ownersOrder | async ">
+                    <td>{{item.owner}}</td>
+                    <td>{{item.state}}</td>
+                </tr>
+            </table>
+        </fieldset>
 
-  </div>
+        <table class="table">
+            <tr>
+                <th>Order Owner</th>
+                <th>Order State</th>
+            </tr>
+            <tr *ngFor="let item of orders | async">
+                <td>{{item.owner}}{{log(item)}}</td>
+                <td>{{item.state}}</td>
+            </tr>
+        </table>
 
+
+    </div>
+    <button (click)="home()" class="basic-btn">Home</button>
 </div>

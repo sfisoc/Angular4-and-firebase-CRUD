@@ -28,6 +28,7 @@ export class ProcessOrderComponent implements OnInit {
   states: any[];
   currentstate: {};
   person: any;
+  state: '';
 
   constructor(public af: AngularFireAuth, private router: Router, private afd: AngularFireDatabase) {
     this.states = [{ name: 'Ordered items Not Avaible' }, { name: 'Processing' }, { name: 'Done' }];
@@ -48,6 +49,15 @@ export class ProcessOrderComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  queue() {
+    this.router.navigateByUrl('/order');
+  }
+
+  home() {
+    this.router.navigateByUrl('/');
+  }
+
 
   processOrder(item, changeState) {
     console.log(item);
